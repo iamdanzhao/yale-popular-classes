@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150672121-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-150672121-2');
+        </script>
+
         <meta charset="utf-8">
         <title>Yale's Most Popular Courses | Yale Daily News</title>
         <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -181,8 +192,17 @@
                                 .domain([0, d3.max(trending, d => d.absChange)])
                                 .range([0, 360])
 
-                            var scaleColorTrendingUnit = d3.scaleLinear()
-                                .domain([0, d3.max(trending, d => d.absChange)])
+                            var scaleColorTrendingUnit = d3.scaleLinear();
+                            
+                            changeMax = d3.max(trending, d => d.absChange);
+                            changeMin = d3.min(trending, d => d.absChange);
+                            
+                            if (changeMax > 4 * changeMin) {
+                                scaleColorTrendingUnit = d3.scaleSqrt();
+                            }
+                            
+                            scaleColorTrendingUnit
+                                .domain([0, changeMax])
                                 .range([0, 1])
 
                             var scaleColorTrending = function(val) {
@@ -246,7 +266,14 @@
                                 .attr("x", 80)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("fill", d => scaleColorTrending(d.change))
-                                .attr("font-size", "40px")
+                                .attr("font-size", d => {
+                                    if (d.absChange < 100) {
+                                        return "40px";
+                                    }
+                                    else {
+                                        return "32px";
+                                    }
+                                })
                                 .attr("font-weight", "bold")
                                 .attr("text-anchor", "end");
                         })
