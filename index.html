@@ -326,7 +326,7 @@
                                 .append("text")
                                 .text(d => d.codes)
                                 .attr("class", ".seminars-codes")
-                                .attr("x", 65)
+                                .attr("x", 90)
                                 .attr("y", (d, i) => i * 60 + 12)
                                 .attr("font-size", "11px")
                                 .attr("font-weight", "bold");
@@ -338,7 +338,7 @@
                                 .append("text")
                                 .text(d => d.name)
                                 .attr("class", ".seminars-name")
-                                .attr("x", 65)
+                                .attr("x", 90)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("font-size", "14px")
                                 .attr("font-weight", "bold");
@@ -359,7 +359,7 @@
                                 .append("text")
                                 .text(d => d.count)
                                 .attr("class", ".seminars-count")
-                                .attr("x", 55)
+                                .attr("x", 80)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("fill", d => scaleColorSeminars(d.count))
                                 .attr("font-size", "40px")
@@ -374,7 +374,7 @@
             <div class="about">
                 <h3>About this project</h3>
                 <p><strong>This is a project of the Yale Daily News Data Desk, a new initiative to bring data-driven journalism to the News. Like what you see? Want to use your data analysis and storytelling skills to report on pressing campus issues? We want to hear from you! Email <a href="mailto:daniel.zhao@yale.edu">Daniel Zhao</a> or <a href="mailto:maggie.nolan@yale.edu">Maggie Nolan</a> to get started.</strong></p>
-                <p>The News scraped <a href="http://https://ivy.yale.edu/course-stats/" target="_blank">Yale's Course Demand Statistics website</a> using a Python script, then analyzed the data in R to extract the most popular courses overall, the courses with the greatest change in shoppers day-to-day, and the most popular seminars. We run these scripts each night to update the data you see.</p>
+                <p>The News scraped <a href="https://ivy.yale.edu/course-stats/" target="_blank">Yale's Course Demand Statistics website</a> using a Python script, then analyzed the data in R to extract the most popular courses overall, the courses with the greatest change in shoppers day-to-day, and the most popular seminars. We run these scripts each night to update the data you see.</p>
                 <p>The News inferred classes to be seminars by defining seminars as non-lab courses that met once a week for approximately two hours. Because the Course Demand Statistics website does not contain meeting times, we merged in data from CourseTable, which provides course meeting times.</p>
                 <p>You can find our scripts, code, and cleaned dataset on <a href="https://github.com/iamdanzhao/yale-popular-classes/" target="_blank">GitHub</a>.</p>
                 <p>Cover photo by staff photographer Zoe Berg.</p>
