@@ -223,7 +223,7 @@
                                 .append("text")
                                 .text(d => d.codes)
                                 .attr("class", ".trending-codes")
-                                .attr("x", 90)
+                                .attr("x", 65)
                                 .attr("y", (d, i) => i * 60 + 12)
                                 .attr("font-size", "11px")
                                 .attr("font-weight", "bold");
@@ -235,7 +235,7 @@
                                 .append("text")
                                 .text(d => d.name)
                                 .attr("class", ".trending-name")
-                                .attr("x", 90)
+                                .attr("x", 65)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("font-size", "14px")
                                 .attr("font-weight", "bold");
@@ -263,7 +263,7 @@
                                     }
                                 })
                                 .attr("class", ".trending-count")
-                                .attr("x", 80)
+                                .attr("x", 55)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("fill", d => scaleColorTrending(d.change))
                                 .attr("font-size", d => {
@@ -326,7 +326,7 @@
                                 .append("text")
                                 .text(d => d.codes)
                                 .attr("class", ".seminars-codes")
-                                .attr("x", 90)
+                                .attr("x", 65)
                                 .attr("y", (d, i) => i * 60 + 12)
                                 .attr("font-size", "11px")
                                 .attr("font-weight", "bold");
@@ -338,7 +338,7 @@
                                 .append("text")
                                 .text(d => d.name)
                                 .attr("class", ".seminars-name")
-                                .attr("x", 90)
+                                .attr("x", 65)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("font-size", "14px")
                                 .attr("font-weight", "bold");
@@ -359,7 +359,7 @@
                                 .append("text")
                                 .text(d => d.count)
                                 .attr("class", ".seminars-count")
-                                .attr("x", 80)
+                                .attr("x", 55)
                                 .attr("y", (d, i) => i * 60 + 30)
                                 .attr("fill", d => scaleColorSeminars(d.count))
                                 .attr("font-size", "40px")
